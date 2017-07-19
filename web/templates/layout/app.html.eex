@@ -9,11 +9,6 @@
 
     <title>Hello Discuss!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-    <!--Import Google Icon Font-->
-    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-
-    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css" rel="style sheet"> -->
-
   </head>
 
   <body>
@@ -26,7 +21,7 @@
 
     <div class="container">
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <!-- <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p> -->
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
       <main role="main">
@@ -36,5 +31,11 @@
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/vendor.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script type="text/javascript">
+      var $toastContent = $('<span><%= get_flash(@conn, :info) %></span>')
+      if ($toastContent[0].innerText.length > 10) {
+        Materialize.toast($toastContent, 5000)
+      }
+    </script>
   </body>
 </html>
