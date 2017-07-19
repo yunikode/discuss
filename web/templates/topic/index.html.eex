@@ -1,5 +1,5 @@
 <h3>Topics</h3>
-<ul class="collection">
+<ul id="topics" class="collection">
   <%= for topic <- @topics do %>
     <li class="collection-item">
       <%= topic.title %>

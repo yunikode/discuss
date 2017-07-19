@@ -19,3 +19,8 @@
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
+
+$(function() {
+  setTimeout(
+  Materialize.showStaggeredList('#topics')), 300
+})
