@@ -27,7 +27,7 @@ exports.config = {
     },
     templates: {
       joinTo: "js/app.js"
-    }
+    },
   },
 
   conventions: {
