@@ -11,6 +11,13 @@ defmodule Discuss.AuthController do
     sign_in(conn, changeset)
   end
 
+  def signout(conn, _params) do
+    conn
+    |> put_flash(:info, "Signed out sucessfully")
+    |> configure_session(drop: true)
+    |> redirect(to: topic_path(conn, :index))
+  end
+
   defp insert_or_update_user(changeset) do
     case Repo.get_by(User, email: changeset.changes.email) do
       nil ->
