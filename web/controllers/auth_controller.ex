@@ -11,10 +11,10 @@ defmodule Discuss.AuthController do
     sign_in(conn, changeset)
   end
 
-  def signout(conn, _params) do
+  def sign_out(conn, _params) do
     conn
-    |> put_flash(:info, "Signed out sucessfully")
-    |> configure_session(drop: true)
+    |> put_flash(:info, "Successfully signed out!")
+    |> clear_session()
     |> redirect(to: topic_path(conn, :index))
   end
 
