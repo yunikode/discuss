@@ -44,7 +44,7 @@
     <script src="<%= static_path(@conn, "/js/vendor.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
     <script type="text/javascript">
-      var $toastContent = $('<span class="red-text"><%= get_flash(@conn, :error) %></span>').add($('<i class="material-icons red-text">warning</i>'))
+      var $toastContent = $('<span class="yellow-text"><%= get_flash(@conn, :error) %></span>').add($('<i class="material-icons red-text">warning</i>'))
       if ($toastContent[0].innerText.length > 10) {
         Materialize.toast($toastContent, 5000)
       }
